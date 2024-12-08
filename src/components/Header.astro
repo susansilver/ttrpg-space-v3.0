@@ -1,0 +1,89 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  Dropdown,
+  DropdownItems,
+  DropdownSubmenu,
+} from "astro-navbar";
+---
+
+<header class="lg:flex padding-y-large gap-5">
+  <Astronav>
+    <div
+      class="flex w-full lg:justify-between justify-start flex-col lg:flex-row lg:items-center margin-x-small"
+    >
+      <div
+        class="flex flex-row gap-2 lg:justify-center lg:items-center justify-start"
+      >
+        <img src="/icons/mstile-150x150.png" class="lg:block hidden" />
+        <div class="flex flex-col">
+          <a
+            href="/"
+            class="no-underline hover:text-black-950 visited:text-black-950 text-5xl"
+            ><strong>Trauma Dump</strong></a
+          >
+
+          <span class="uppercase">A Dimension 20 Fansite</span>
+        </div>
+      </div>
+      <div id="menu-list">
+        <div class="block lg:hidden margin-top-med">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
+        </div>
+
+        <MenuItems class="hidden lg:flex">
+          <ul class="flex flex-col lg:flex-row lg:gap-5 list-none lar">
+            <!--  <li><a href="/about">About</a></li> -->
+            <!--   <li><a href="/">Blog</a></li> -->
+            <li><a href="/campaigns/short-story">Stories</a></li>
+            <li>
+              <Dropdown class="group">
+                <button
+                  class="border-0 rounded-none bg-transparent hover:bg-transparent m-0 p-0"
+                >
+                  <span class="underline hover:text-primary-900">
+                    Dimension 20 ▼</span
+                  >
+                  <!-- You can style when dropdown is `open` -->
+                </button>
+                <DropdownItems class="relative">
+                  <div class="lg:absolute lg:top-0 bg-accent-300">
+                    <ul class="list-none p-8">
+                      <li><a href="/campaigns">Campaigns</a></li>
+                      <li><a href="/players">Players</a></li>
+                      <li><a href="/gm">GM</a></li>
+                      <li><a href="/type">Campaign Type</a></li>
+                    </ul>
+                  </div>
+                </DropdownItems>
+              </Dropdown>
+            </li>
+            <!--  <li><a href="/campaigns">Campaigns</a></li>
+            <li><a href="/players">Players</a></li>
+            <li><a href="/gm">GM</a></li>
+            <li><a href="/type">Campaign Type</a></li> -->
+            <!--  <li><a href="/privacy-policy">Privacy Policy</a></li> -->
+            <li>
+              <a href="https://www.patreon.com/susansilver" target="_blank"
+                >Patreon</a
+              >
+            </li>
+            <!--  <li><a href="/privacy-policy">Privacy Policy</a></li> -->
+            <li>
+              <a href="/rss.xml">RSS</a>
+              <li>
+                <a
+                  href="mailto:suzza@susansilver.net"
+                  class="p-3 bg-blue-brand rounded-xl text-white-50 visited:text-white-50 hover:text-primary-900"
+                  >Contact</a
+                >
+              </li>
+            </li>
+          </ul>
+        </MenuItems>
+      </div>
+    </div>
+  </Astronav>
+</header>

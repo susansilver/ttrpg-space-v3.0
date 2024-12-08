@@ -1,0 +1,19 @@
+---
+const { cite } = Astro.props;
+---
+
+<blockquote class="m-1 bg-blue-brand text-slate-100 p-5 text-length">
+  <div class="p-2">
+    <p><slot /></p>
+    <hr class="border border-t-yellow-brand" />
+    <div class="margin-y-med">
+      - {cite}
+    </div>
+  </div>
+</blockquote>
+
+<style>
+  .text-length {
+    max-width: 55ch;
+  }
+</style>

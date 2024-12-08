@@ -1,0 +1,59 @@
+---
+// CampaignCard.astro
+interface Props {
+  title: string;
+  dm: string;
+  players: string[];
+  type: string;
+  series?: string;
+}
+
+const { title, dm, players, type, series } = Astro.props;
+---
+
+<div>
+  <h1>{title}</h1>
+  <div class="capitalize flex lg:flex-row flex-col gap-5 my-8" id="meta">
+    <p>
+      GM:
+      <a
+        href={`/gm/${dm}`}
+        class="text-white-50 hover:text-primary-300 p-3 bg-blue-brand"
+      >
+        {dm.replace(/-/g, " ")}
+      </a>
+    </p>
+    <p>Players:</p>
+    <ul class="flex lg:flex-row flex-col flex-wrap gap-2 list-none lg:w-80">
+      {
+        players.map((player) => (
+          <li class="p-3 bg-blue-brand text-white-50">
+            <a
+              href={`/players/${player}`}
+              class="text-white-50 hover:text-primary-300"
+            >
+              {player.replace(/-/g, " ")}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <p>
+      Type:
+      <a
+        href={`/type/${type}`}
+        class="text-white-50 hover:text-primary-300 p-3 bg-blue-brand"
+      >
+        {type.replace(/-/g, " ")}
+      </a>
+    </p>
+    {
+      series && (
+        <p>
+          Series:
+          <span class="text-white-50 p-3 bg-blue-brand">{series}</span>
+        </p>
+      )
+    }
+  </div>
+</div>

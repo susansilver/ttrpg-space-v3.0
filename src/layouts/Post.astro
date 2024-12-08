@@ -1,0 +1,63 @@
+---
+import { type CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+// 2. When it's time to render, you can get the entry directly from the prop
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={frontmatter.title} description={frontmatter.description} />
+  </head>
+
+  <body class="bg-accent-300">
+    <Header />
+    <main>
+      <article>
+        <div class="grid grid-cols-12">
+          <div
+            class="lg:col-span-8 lg:col-start-3 lg:col-end-11 col-span-10 col-start-2 col-end-12"
+          >
+            <h1>{frontmatter.title}</h1>
+            <div>
+              by Suzza Silver ✪ <time
+                datetime={new Date(frontmatter.pubDate).toISOString()}
+              >
+                Published on {
+                  new Date(frontmatter.pubDate).toLocaleDateString(undefined, {
+                    dateStyle: "medium",
+                    timeZone: "UTC",
+                  })
+                }
+              </time>
+            </div>
+            <div
+              class="border-l-2 border-blue-brand padding-left-xxl text-black-950 paragraph-width"
+            >
+              <slot />
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <Footer />
+    </main>
+  </body>
+</html>
+
+<style>
+  .paragraph-width {
+    max-width: 75ch;
+  }
+</style>
