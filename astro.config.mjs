@@ -15,7 +15,7 @@ import compressor from "astro-compressor";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://traumadump.xyz",
+  site: "https://tabletoprpg.space",
   integrations: [
     embeds(),
     mdx(),
