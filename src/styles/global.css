@@ -411,7 +411,7 @@ p {
 }
 
 /* Buttons */
-button {
+.btn {
   padding-inline: var(--space-xl);
   padding-block: var(--space-small);
   border: 5px solid #4314bf;
@@ -422,7 +422,7 @@ button {
   border-bottom-right-radius: 15px;
 }
 
-button:hover {
+.btn:hover {
   background-color: #4314bf;
   color: #fff;
 }

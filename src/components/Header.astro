@@ -30,7 +30,7 @@ import {
       </div>
       <div id="menu-list">
         <div class="block lg:hidden margin-top-med">
-          <MenuIcon class="w-4 h-4 text-gray-800" />
+          <MenuIcon class="btn h-16 w-16" />
         </div>
 
         <MenuItems class="hidden lg:flex">
@@ -45,7 +45,11 @@ import {
                 <button
                   class="border-0 rounded-none bg-transparent hover:bg-transparent m-0 p-0"
                 >
-                  <span> Dimension 20 ▼</span>
+                  <span
+                    class="underline hover:text-primary-900 text-primary-950"
+                  >
+                    Dimension 20 ▼</span
+                  >
                   <!-- You can style when dropdown is `open` -->
                 </button>
                 <DropdownItems class="relative">
@@ -91,3 +95,20 @@ import {
     </div>
   </Astronav>
 </header>
+
+<style>
+  .btn-bg {
+    border: 5px solid #4314bf;
+    background-color: #7364ff;
+    transition: color 0.3s ease-out;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding-inline: 1.5em;
+    padding-block: 1em;
+  }
+
+  .btn-bg:hover {
+    background-color: #4314bf;
+    color: #fff;
+  }
+</style>
