@@ -11,8 +11,14 @@ import playformCompress from "@playform/compress";
 
 import compressor from "astro-compressor";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://tabletoprpg.space",
   integrations: [embeds(), mdx(), sitemap(), playformCompress(), compressor()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

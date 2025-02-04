@@ -59,12 +59,14 @@ const { Content } = await render(recentEntry);
                           href={recentEntry.data.prev}
                           class="no-underline
   text-white-50
-  hover:text-primary-300
+  hover:bg-primary-900
   visited:text-white-50
   p-3
   bg-blue-brand rounded-full"
                         >
-                          <div class="max-w-fit">❮ Prev Episode</div>
+                          <div class="max-w-fit text-white-50">
+                            ❮ Prev Episode
+                          </div>
                         </a>
                       )
                   }
@@ -75,12 +77,14 @@ const { Content } = await render(recentEntry);
                           href={recentEntry.data.next}
                           class="no-underline
   text-white-50
-  hover:text-primary-300
+  hover:bg-primary-900
   visited:text-white-50
   p-3
   bg-blue-brand rounded-full"
                         >
-                          <div class="max-w-fit">Next Episode ❯</div>
+                          <div class="max-w-fit text-white-50">
+                            Next Episode ❯
+                          </div>
                         </a>
                       )
                   }
@@ -97,9 +101,11 @@ const { Content } = await render(recentEntry);
                         Campaign:
                         <a
                           href={`/campaigns/${recentEntry.data.campaign}`}
-                          class="text-white-50 hover:text-primary-300 visited:text-white-50 p-3 bg-blue-brand"
+                          class="text-white-50 hover:bg-primary-900 visited:text-white-50 p-3 bg-blue-brand"
                         >
-                          {campaignData?.data.title}
+                          <span class="text-white-50">
+                            {campaignData?.data.title}
+                          </span>
                         </a>
                       </p>
                     )
@@ -111,9 +117,11 @@ const { Content } = await render(recentEntry);
                         GM:
                         <a
                           href={`/gm/${campaignData?.data.dm}`}
-                          class="text-white-50 hover:text-primary-300 visited:text-white-50 p-3 bg-blue-brand"
+                          class="text-white-50 hover:bg-primary-900 visited:text-white-50 p-3 bg-blue-brand"
                         >
-                          {campaignData?.data.dm.replace(/-/g, " ")}
+                          <span class="text-white-50">
+                            {campaignData?.data.dm.replace(/-/g, " ")}
+                          </span>
                         </a>
                       </p>
                     )
@@ -126,12 +134,14 @@ const { Content } = await render(recentEntry);
                           Players:
                           <ul class="flex lg:flex-row flex-col flex-wrap gap-2 list-none lg:w-52">
                             {campaignData.data.players.map((player) => (
-                              <li>
+                              <li class="list-none">
                                 <a
                                   href={`/players/${player}`}
-                                  class="text-white-50 hover:text-primary-300 visited:text-white-50 p-3 bg-blue-brand"
+                                  class="text-white-50 hover:bg-primary-900 visited:text-white-50 p-3 bg-blue-brand"
                                 >
-                                  {player.replace(/-/g, " ")}
+                                  <span class="text-white-50">
+                                    {player.replace(/-/g, " ")}
+                                  </span>
                                 </a>
                               </li>
                             ))}
@@ -146,9 +156,11 @@ const { Content } = await render(recentEntry);
                         Type:
                         <a
                           href={`/type/${campaignData?.data.type}`}
-                          class="text-white-50 hover:text-primary-300 visited:text-white-50 p-3 bg-blue-brand"
+                          class="text-white-50 hover:bg-primary-900 visited:text-white-50 p-3 bg-blue-brand"
                         >
-                          {campaignData?.data.type.replace(/-/g, " ")}
+                          <span class="text-white-50">
+                            {campaignData?.data.type.replace(/-/g, " ")}
+                          </span>
                         </a>
                       </p>
                     )

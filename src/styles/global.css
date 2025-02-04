@@ -1,6 +1,69 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  exclude: rootcolor;
+  themes: false;
+}
+
+@theme {
+  --color-white-50: #fafafa;
+  --color-black-950: #212121;
+  --color-yellow-brand: #fd6f01;
+  --color-blue-brand: #12082d;
+
+  --color-secondary-50: #fff9ec;
+  --color-secondary-100: #fff1d3;
+  --color-secondary-200: #ffdfa6;
+  --color-secondary-300: #ffc86d;
+  --color-secondary-400: #ffa433;
+  --color-secondary-500: #ff880b;
+  --color-secondary-600: #fd6f01;
+  --color-secondary-700: #cb5003;
+  --color-secondary-800: #a13f0b;
+  --color-secondary-900: #81350d;
+  --color-secondary-950: #461804;
+
+  --color-primary-50: #eaecff;
+  --color-primary-100: #d9dbff;
+  --color-primary-200: #babcff;
+  --color-primary-300: #9190ff;
+  --color-primary-400: #7364ff;
+  --color-primary-500: #6441ff;
+  --color-primary-600: #5b20ff;
+  --color-primary-700: #5215ed;
+  --color-primary-800: #4314bf;
+  --color-primary-900: #381a95;
+  --color-primary-950: #12082d;
+
+  --color-accent-50: #fff0f2;
+  --color-accent-100: #ffe3e7;
+  --color-accent-200: #ffcbd5;
+  --color-accent-300: #ffa0b3;
+  --color-accent-400: #ff6b8a;
+  --color-accent-500: #fc3767;
+  --color-accent-600: #ec205b;
+  --color-accent-700: #c60a45;
+  --color-accent-800: #a60b41;
+  --color-accent-900: #8d0e3e;
+  --color-accent-950: #4f021d;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
 
 :root {
   --space-xs: 0.25em;

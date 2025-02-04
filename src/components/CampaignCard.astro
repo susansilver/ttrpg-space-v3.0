@@ -18,21 +18,18 @@ const { title, dm, players, type, series } = Astro.props;
       GM:
       <a
         href={`/gm/${dm}`}
-        class="text-white-50 hover:text-primary-300 p-3 bg-blue-brand"
+        class="text-white-50 hover:bg-primary-900 p-3 bg-blue-brand"
       >
-        {dm.replace(/-/g, " ")}
+        <span class="text-white-50">{dm.replace(/-/g, " ")}</span>
       </a>
     </p>
     <p>Players:</p>
     <ul class="flex lg:flex-row flex-col flex-wrap gap-2 list-none lg:w-80">
       {
         players.map((player) => (
-          <li class="p-3 bg-blue-brand text-white-50">
-            <a
-              href={`/players/${player}`}
-              class="text-white-50 hover:text-primary-300"
-            >
-              {player.replace(/-/g, " ")}
+          <li class="p-3 bg-blue-brand text-white-50 list-none hover:bg-primary-900">
+            <a href={`/players/${player}`} class="text-white-50 ">
+              <span class="text-white-50">{player.replace(/-/g, " ")}</span>
             </a>
           </li>
         ))
@@ -42,9 +39,9 @@ const { title, dm, players, type, series } = Astro.props;
       Type:
       <a
         href={`/type/${type}`}
-        class="text-white-50 hover:text-primary-300 p-3 bg-blue-brand"
+        class="text-white-50 hover:bg-primary-900 p-3 bg-blue-brand"
       >
-        {type.replace(/-/g, " ")}
+        <span class="text-white-50">{type.replace(/-/g, " ")}</span>
       </a>
     </p>
     {
