@@ -65,6 +65,10 @@ const allCampaigns = await getCollection("campaignsList");
 const neverPosts = allCampaigns.filter((post) =>
   post.data.title?.includes("Neverafter")
 );
+
+const aramanPosts = allCampaigns.filter((post) =>
+  post.data.title?.includes("Aramán")
+);
 ---
 
 <html lang="en">
@@ -88,6 +92,22 @@ const neverPosts = allCampaigns.filter((post) =>
                 <p>Nothing to see here.</p>
               ) : (
                 neverPosts.map((post) => (
+                  <CampaignCard
+                    title={post.data.title}
+                    dm={post.data.dm}
+                    players={post.data.players}
+                    type={post.data.type}
+                    series={post.data.series}
+                  />
+                ))
+              ))
+          }
+          {
+            params.campaigns === "araman" &&
+              (aramanPosts.length === 0 ? (
+                <p>Nothing to see here.</p>
+              ) : (
+                aramanPosts.map((post) => (
                   <CampaignCard
                     title={post.data.title}
                     dm={post.data.dm}
