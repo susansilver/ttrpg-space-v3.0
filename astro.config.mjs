@@ -13,6 +13,8 @@ import compressor from "astro-compressor";
 
 import tailwindcss from "@tailwindcss/vite";
 
+import { unified } from "@astrojs/markdown-remark";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://tabletoprpg.space",
@@ -20,5 +22,8 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()],
+  },
+  markdown: {
+    processor: unified(),
   },
 });
