@@ -7,23 +7,23 @@ import sitemap from "@astrojs/sitemap";
 
 import embeds from "astro-embed/integration";
 
-import playformCompress from "@playform/compress";
+/* import playformCompress from "@playform/compress";
 
-import compressor from "astro-compressor";
+import compressor from "astro-compressor"; */
 
 import tailwindcss from "@tailwindcss/vite";
 
-import { unified } from "@astrojs/markdown-remark";
+/* import { unified } from "@astrojs/markdown-remark"; */
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://tabletoprpg.space",
-  integrations: [embeds(), mdx(), sitemap(), playformCompress(), compressor()],
+  integrations: [embeds(), mdx(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()],
   },
-  markdown: {
+  /*   markdown: {
     processor: unified(),
-  },
+  }, */
 });
